@@ -1,0 +1,199 @@
+{
+  "version": 1,
+  "fixture": true,
+  "fixtureNotice": "FIXTURE DATA. Nothing in this file was produced by a real transaction. Every hash, block number, gas figure and balance is a synthetic placeholder written by the Frontend Engineer so the interface could be built before deployment. Synthetic hashes are deliberately shaped as 0x0000...00NN so they cannot be mistaken for real ones, and every explorerUrl is null so the interface cannot link to a transaction that does not exist. Replace this file's role by pointing NEXT_PUBLIC_DATA_SOURCE at the live manifest once docs/evidence/transactions.json carries real cycles.",
+  "generatedAt": "2026-09-04T00:00:00Z",
+  "commit": null,
+  "contracts": {
+    "invoiceRegistry": { "chainId": 11155111, "address": null },
+    "trancheWaterfall": { "chainId": 102031, "address": null },
+    "attestcoinVerifier": { "chainId": 102031, "address": null }
+  },
+  "cycles": [
+    {
+      "id": "cycle-1",
+      "kind": "allocation",
+      "label": "First attested repayment",
+      "occurredAt": "2026-09-04T10:10:00Z",
+      "invoiceId": "1",
+      "source": {
+        "chain": "ethereum-sepolia",
+        "chainId": 11155111,
+        "event": "InvoiceRepaid",
+        "txHash": "0x0000000000000000000000000000000000000000000000000000000000000011",
+        "blockNumber": 101,
+        "logIndex": 0,
+        "amount": "25000000000000000000000",
+        "explorerUrl": null
+      },
+      "attestation": {
+        "chainKey": 1,
+        "attestedHeight": 101,
+        "attestationId": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "proverUrl": "https://prover.cc3-testnet.creditcoin.network",
+        "fetchedAt": "2026-09-04T10:11:00Z",
+        "cached": false,
+        "continuityHashCount": 12,
+        "status": "attested"
+      },
+      "destination": {
+        "chain": "creditcoin-cc3-testnet",
+        "chainId": 102031,
+        "txHash": "0x0000000000000000000000000000000000000000000000000000000000000013",
+        "blockNumber": 201,
+        "status": "success",
+        "gasUsed": "0",
+        "explorerUrl": null
+      },
+      "allocation": {
+        "attestedAmount": "25000000000000000000000",
+        "seniorAllocation": "25000000000000000000000",
+        "juniorAllocation": "0",
+        "seniorOutstandingBefore": "74200000000000000000000",
+        "seniorOutstandingAfter": "49200000000000000000000",
+        "juniorOutstandingBefore": "35400000000000000000000",
+        "juniorOutstandingAfter": "35400000000000000000000"
+      },
+      "rejection": null
+    },
+    {
+      "id": "cycle-2",
+      "kind": "rejection",
+      "label": "Replay of an attestation already applied",
+      "occurredAt": "2026-09-04T10:20:00Z",
+      "invoiceId": "1",
+      "source": {
+        "chain": "ethereum-sepolia",
+        "chainId": 11155111,
+        "event": "InvoiceRepaid",
+        "txHash": "0x0000000000000000000000000000000000000000000000000000000000000011",
+        "blockNumber": 101,
+        "logIndex": 0,
+        "amount": "25000000000000000000000",
+        "explorerUrl": null
+      },
+      "attestation": {
+        "chainKey": 1,
+        "attestedHeight": 101,
+        "attestationId": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "proverUrl": "https://prover.cc3-testnet.creditcoin.network",
+        "fetchedAt": "2026-09-04T10:19:30Z",
+        "cached": true,
+        "continuityHashCount": 12,
+        "status": "attested"
+      },
+      "destination": {
+        "chain": "creditcoin-cc3-testnet",
+        "chainId": 102031,
+        "txHash": "0x0000000000000000000000000000000000000000000000000000000000000023",
+        "blockNumber": 202,
+        "status": "reverted",
+        "gasUsed": "0",
+        "explorerUrl": null
+      },
+      "allocation": null,
+      "rejection": {
+        "reason": "AlreadyApplied",
+        "errorSignature": "AttestationFailed(bytes32,uint8)",
+        "revertData": "0x29c3745900000000000000000000000000000000000000000000000000000000000000120000000000000000000000000000000000000000000000000000000000000003",
+        "seniorOutstandingBefore": "49200000000000000000000",
+        "seniorOutstandingAfter": "49200000000000000000000",
+        "juniorOutstandingBefore": "35400000000000000000000",
+        "juniorOutstandingAfter": "35400000000000000000000"
+      }
+    },
+    {
+      "id": "cycle-3",
+      "kind": "allocation",
+      "label": "Second attested repayment, senior exhausted",
+      "occurredAt": "2026-09-04T10:30:00Z",
+      "invoiceId": "2",
+      "source": {
+        "chain": "ethereum-sepolia",
+        "chainId": 11155111,
+        "event": "InvoiceRepaid",
+        "txHash": "0x0000000000000000000000000000000000000000000000000000000000000031",
+        "blockNumber": 103,
+        "logIndex": 0,
+        "amount": "60000000000000000000000",
+        "explorerUrl": null
+      },
+      "attestation": {
+        "chainKey": 1,
+        "attestedHeight": 103,
+        "attestationId": "0x0000000000000000000000000000000000000000000000000000000000000032",
+        "proverUrl": "https://prover.cc3-testnet.creditcoin.network",
+        "fetchedAt": "2026-09-04T10:31:00Z",
+        "cached": false,
+        "continuityHashCount": 12,
+        "status": "attested"
+      },
+      "destination": {
+        "chain": "creditcoin-cc3-testnet",
+        "chainId": 102031,
+        "txHash": "0x0000000000000000000000000000000000000000000000000000000000000033",
+        "blockNumber": 203,
+        "status": "success",
+        "gasUsed": "0",
+        "explorerUrl": null
+      },
+      "allocation": {
+        "attestedAmount": "60000000000000000000000",
+        "seniorAllocation": "49200000000000000000000",
+        "juniorAllocation": "10800000000000000000000",
+        "seniorOutstandingBefore": "49200000000000000000000",
+        "seniorOutstandingAfter": "0",
+        "juniorOutstandingBefore": "35400000000000000000000",
+        "juniorOutstandingAfter": "24600000000000000000000"
+      },
+      "rejection": null
+    },
+    {
+      "id": "cycle-4",
+      "kind": "rejection",
+      "label": "Deliberately malformed attestation",
+      "occurredAt": "2026-09-04T10:40:00Z",
+      "invoiceId": "3",
+      "source": {
+        "chain": "ethereum-sepolia",
+        "chainId": 11155111,
+        "event": "InvoiceRepaid",
+        "txHash": "0x0000000000000000000000000000000000000000000000000000000000000041",
+        "blockNumber": 104,
+        "logIndex": 0,
+        "amount": "12000000000000000000000",
+        "explorerUrl": null
+      },
+      "attestation": {
+        "chainKey": 1,
+        "attestedHeight": 104,
+        "attestationId": "0x0000000000000000000000000000000000000000000000000000000000000042",
+        "proverUrl": "https://prover.cc3-testnet.creditcoin.network",
+        "fetchedAt": "2026-09-04T10:39:20Z",
+        "cached": true,
+        "continuityHashCount": 12,
+        "status": "corrupted",
+        "corruptionMode": "continuity"
+      },
+      "destination": {
+        "chain": "creditcoin-cc3-testnet",
+        "chainId": 102031,
+        "txHash": "0x0000000000000000000000000000000000000000000000000000000000000043",
+        "blockNumber": 204,
+        "status": "reverted",
+        "gasUsed": "0",
+        "explorerUrl": null
+      },
+      "allocation": null,
+      "rejection": {
+        "reason": "InvalidProof",
+        "errorSignature": "AttestationFailed(bytes32,uint8)",
+        "revertData": "0x29c3745900000000000000000000000000000000000000000000000000000000000000420000000000000000000000000000000000000000000000000000000000000000",
+        "seniorOutstandingBefore": "0",
+        "seniorOutstandingAfter": "0",
+        "juniorOutstandingBefore": "24600000000000000000000",
+        "juniorOutstandingAfter": "24600000000000000000000"
+      }
+    }
+  ]
+}

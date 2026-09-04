@@ -1,0 +1,179 @@
+[
+  {
+    "type": "function",
+    "name": "getInvoice",
+    "inputs": [
+      {
+        "name": "invoiceId",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "issuer",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "faceValue",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "issuedAt",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "repaidTotal",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "invoiceReference",
+        "type": "string",
+        "internalType": "string"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "invoiceCount",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "issueInvoice",
+    "inputs": [
+      {
+        "name": "faceValue",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "invoiceReference",
+        "type": "string",
+        "internalType": "string"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "invoiceId",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "repayInvoice",
+    "inputs": [
+      {
+        "name": "invoiceId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "InvoiceIssued",
+    "inputs": [
+      {
+        "name": "invoiceId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "issuer",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "faceValue",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "issuedAt",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "InvoiceRepaid",
+    "inputs": [
+      {
+        "name": "invoiceId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "payer",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "repaidAt",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "FaceValueZero",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvoiceDoesNotExist",
+    "inputs": [
+      {
+        "name": "invoiceId",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "RepaymentAmountZero",
+    "inputs": []
+  }
+]

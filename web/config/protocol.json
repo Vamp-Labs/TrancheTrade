@@ -1,0 +1,10 @@
+{
+  "documentedSeniorRateBps": 10600,
+  "documentedJuniorRateBps": 11800,
+  "bpsDenominator": 10000,
+  "documentedTrancheCount": 2,
+  "tokenDecimals": 18,
+  "displayFractionDigits": 2,
+  "livePollIntervalMs": 4000,
+  "provenanceNote": "These are the values declared in the frozen TrancheWaterfall interface (handoff 04-frontend.md R-4). They are used only as a labelled fallback while no contract address is recorded; when an address exists the interface reads SENIOR_RATE_BPS, JUNIOR_RATE_BPS and trancheCount() from the chain and prefers those."
+}

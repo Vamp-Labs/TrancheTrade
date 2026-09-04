@@ -1,0 +1,641 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "verifier",
+        "type": "address",
+        "internalType": "contract IAttestationVerifier"
+      },
+      {
+        "name": "seniorCap",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "juniorCap",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "minSourceHeight",
+        "type": "uint64",
+        "internalType": "uint64"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "BPS",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "JUNIOR_CAP",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "JUNIOR_RATE_BPS",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "MIN_SOURCE_HEIGHT",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint64",
+        "internalType": "uint64"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "SENIOR_CAP",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "SENIOR_RATE_BPS",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "TRANCHE_COUNT",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "VERIFIER",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract IAttestationVerifier"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "allocate",
+    "inputs": [
+      {
+        "name": "proof",
+        "type": "tuple",
+        "internalType": "struct RepaymentProof",
+        "components": [
+          {
+            "name": "chainKey",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "height",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "encodedTransaction",
+            "type": "bytes",
+            "internalType": "bytes"
+          },
+          {
+            "name": "merkleProof",
+            "type": "tuple",
+            "internalType": "struct INativeQueryVerifier.MerkleProof",
+            "components": [
+              {
+                "name": "root",
+                "type": "bytes32",
+                "internalType": "bytes32"
+              },
+              {
+                "name": "siblings",
+                "type": "tuple[]",
+                "internalType": "struct INativeQueryVerifier.MerkleProofEntry[]",
+                "components": [
+                  {
+                    "name": "hash",
+                    "type": "bytes32",
+                    "internalType": "bytes32"
+                  },
+                  {
+                    "name": "isLeft",
+                    "type": "bool",
+                    "internalType": "bool"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "continuityProof",
+            "type": "tuple",
+            "internalType": "struct INativeQueryVerifier.ContinuityProof",
+            "components": [
+              {
+                "name": "lowerEndpointDigest",
+                "type": "bytes32",
+                "internalType": "bytes32"
+              },
+              {
+                "name": "roots",
+                "type": "bytes32[]",
+                "internalType": "bytes32[]"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "appliedAttestations",
+    "inputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "deposit",
+    "inputs": [
+      {
+        "name": "tranche",
+        "type": "uint8",
+        "internalType": "enum Tranche"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "payable"
+  },
+  {
+    "type": "function",
+    "name": "isApplied",
+    "inputs": [
+      {
+        "name": "attestationId",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "juniorAllocatedTotal",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "juniorOutstanding",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "juniorPositionOf",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "juniorPrincipal",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "positionOf",
+    "inputs": [
+      {
+        "name": "investor",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "senior",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "junior",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "seniorAllocatedTotal",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "seniorOutstanding",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "seniorPositionOf",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "seniorPrincipal",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "snapshot",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "seniorOutstanding_",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "juniorOutstanding_",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "seniorPrincipal_",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "juniorPrincipal_",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "seniorAllocatedTotal_",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "juniorAllocatedTotal_",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "seniorCap_",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "juniorCap_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "trancheCount",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "pure"
+  },
+  {
+    "type": "event",
+    "name": "Deposited",
+    "inputs": [
+      {
+        "name": "investor",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "tranche",
+        "type": "uint8",
+        "indexed": true,
+        "internalType": "enum Tranche"
+      },
+      {
+        "name": "principal",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "entitlement",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "JuniorAllocated",
+    "inputs": [
+      {
+        "name": "attestationId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "juniorOutstandingAfter",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "RepaymentAllocated",
+    "inputs": [
+      {
+        "name": "attestationId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "invoiceId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "attestedAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "seniorAllocation",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "juniorAllocation",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "SeniorAllocated",
+    "inputs": [
+      {
+        "name": "attestationId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "seniorOutstandingAfter",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "AttestationFailed",
+    "inputs": [
+      {
+        "name": "attestationId",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "reason",
+        "type": "uint8",
+        "internalType": "enum RejectionReason"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "DepositAmountZero",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "ReentrancyGuardReentrantCall",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "RepaymentExceedsOutstanding",
+    "inputs": [
+      {
+        "name": "attestedAmount",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "totalOutstanding",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "TrancheCapExceeded",
+    "inputs": [
+      {
+        "name": "tranche",
+        "type": "uint8",
+        "internalType": "enum Tranche"
+      },
+      {
+        "name": "cap",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "attempted",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ]
+  }
+]

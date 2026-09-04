@@ -1,0 +1,83 @@
+{
+  "generatedAt": "2026-09-04T14:15:00Z",
+  "commit": null,
+  "commitNote": "The working tree is not a git repository yet, so no commit SHA can be recorded. Populate this field with 'git rev-parse HEAD' once the repository is initialised.",
+  "solcVersion": "0.8.24",
+  "evmVersion": "paris",
+  "deploymentStatus": "DEPLOYED \u2014 all three contracts broadcast to their target chains on 2026-09-04. Every address, transaction hash and block number below is from a real broadcast and is verifiable on the linked explorer.",
+  "preflight": {
+    "sepoliaDeployScriptSimulated": true,
+    "creditcoinDeployScriptSimulated": true,
+    "creditcoinAcceptsParisBytecode": true,
+    "creditcoinAcceptsShanghaiBytecode": true,
+    "evmVersionDecision": "paris retained. CC3 accepted a PUSH0 (shanghai) creation payload in an eth_call preflight, so raising it is possible, but paris is kept because it is the mandated default and nothing in this codebase benefits from shanghai.",
+    "creditcoinSimulationNote": "The CC3 RPC does not return a mixHash field on blocks, so a forge fork at the paris spec or later fails with 'header validation error: prevrandao not set'. Run forge script against CC3 with --evm-version london; the executable creation bytecode is byte-identical to the paris build and differs only in the trailing CBOR metadata."
+  },
+  "contracts": {
+    "InvoiceRegistry": {
+      "chain": "ethereum-sepolia",
+      "chainId": 11155111,
+      "address": "0x049a7c970Bd1e35ff13C15e73F59FbfA690D3ae5",
+      "deployTxHash": "0x772cbd6cf65a96d914d077b1d20022f9841fd14e5a2289d1882249daf378b907",
+      "deployBlockNumber": 11633947,
+      "explorer": "https://sepolia.etherscan.io/address/0x049a7c970Bd1e35ff13C15e73F59FbfA690D3ae5",
+      "constructorArgs": {}
+    },
+    "AttestcoinVerifier": {
+      "chain": "creditcoin-cc3-testnet",
+      "chainId": 102031,
+      "address": "0x3b3dfc7609fA394EC268364Df0270444963428F1",
+      "deployTxHash": "0x576174b70ec030fc3944f30f835e5a28569800c3db89b40a3a2fba0043131763",
+      "deployBlockNumber": 5429427,
+      "explorer": "https://creditcoin-testnet.blockscout.com/address/0x3b3dfc7609fA394EC268364Df0270444963428F1",
+      "constructorArgs": {
+        "blockProver": "0x0000000000000000000000000000000000000FD2",
+        "expectedChainKey": 1,
+        "invoiceRegistry": "0x049a7c970Bd1e35ff13C15e73F59FbfA690D3ae5"
+      }
+    },
+    "TrancheWaterfall": {
+      "chain": "creditcoin-cc3-testnet",
+      "chainId": 102031,
+      "address": "0x11ae52135180Cc0e76d28fbD6c9985393C291868",
+      "deployTxHash": "0x4d3c0c02836070d16bb3559d44652a5e924381dd8d3d144d1a0ccade0e3bc21b",
+      "deployBlockNumber": 5429427,
+      "explorer": "https://creditcoin-testnet.blockscout.com/address/0x11ae52135180Cc0e76d28fbD6c9985393C291868",
+      "constructorArgs": {
+        "verifier": "0x3b3dfc7609fA394EC268364Df0270444963428F1",
+        "seniorCap": "70000000000000000000000",
+        "juniorCap": "30000000000000000000000",
+        "minSourceHeight": 11633947
+      }
+    },
+    "invoiceRegistry": {
+      "chainId": 11155111,
+      "address": "0x049a7c970Bd1e35ff13C15e73F59FbfA690D3ae5",
+      "deployTxHash": "0x772cbd6cf65a96d914d077b1d20022f9841fd14e5a2289d1882249daf378b907",
+      "deployBlockNumber": 11633947,
+      "explorer": "https://sepolia.etherscan.io/address/0x049a7c970Bd1e35ff13C15e73F59FbfA690D3ae5",
+      "aliasOf": "InvoiceRegistry"
+    },
+    "attestcoinVerifier": {
+      "chainId": 102031,
+      "address": "0x3b3dfc7609fA394EC268364Df0270444963428F1",
+      "deployTxHash": "0x576174b70ec030fc3944f30f835e5a28569800c3db89b40a3a2fba0043131763",
+      "deployBlockNumber": 5429427,
+      "explorer": "https://creditcoin-testnet.blockscout.com/address/0x3b3dfc7609fA394EC268364Df0270444963428F1",
+      "aliasOf": "AttestcoinVerifier"
+    },
+    "trancheWaterfall": {
+      "chainId": 102031,
+      "address": "0x11ae52135180Cc0e76d28fbD6c9985393C291868",
+      "deployTxHash": "0x4d3c0c02836070d16bb3559d44652a5e924381dd8d3d144d1a0ccade0e3bc21b",
+      "deployBlockNumber": 5429427,
+      "explorer": "https://creditcoin-testnet.blockscout.com/address/0x11ae52135180Cc0e76d28fbD6c9985393C291868",
+      "aliasOf": "TrancheWaterfall"
+    }
+  },
+  "sourceTransactions": {
+    "invoiceIssued": null,
+    "invoiceRepaid": null
+  },
+  "keyAliasNote": "contracts.<camelCase> entries are aliases of contracts.<PascalCase>. The relayer resolves camelCase names inside contracts; the web app reads the PascalCase entries. Both describe the same deployment."
+}

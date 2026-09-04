@@ -1,0 +1,28 @@
+{
+  "name": "tranchetrade-relayer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Permissionless CLI relayer for TrancheTrade: Ethereum Sepolia to Attestcoin to Creditcoin CC3.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "relayer": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "relayer": "tsx src/cli.ts"
+  },
+  "dependencies": {
+    "@gluwa/usc-sdk": "^0.18.0",
+    "ethers": "^6.15.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.3"
+  }
+}

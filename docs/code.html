@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Once in a Lifetime - Pieter Bruegel d. Ä. | KHM</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            khmBg: '#f6f4ee',
+            khmDark: '#121212',
+            khmGray: '#767676',
+            khmBorder: '#dedbd2'
+          },
+          fontFamily: {
+            serif: ['"Times New Roman"', 'Times', 'Baskerville', 'Georgia', 'serif'],
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+<!-- Custom styles for typography and precise layout -->
+<style data-purpose="typography">
+    .main-title {
+      font-size: clamp(3.75rem, 8.5vw, 9.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.015em;
+      font-weight: 400;
+    }
+    .museum-logo {
+      letter-spacing: 0.08em;
+      line-height: 1.15;
+    }
+  </style>
+<style data-purpose="banner-badge">
+    /* Subtle rotated sticker style for exhibition closed tag */
+    .closed-badge {
+      transform: rotate(-3deg);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-khmBg text-khmDark min-h-screen flex flex-col justify-between overflow-x-hidden relative font-sans select-none">
+<!-- BEGIN: MainHeader -->
+<header class="w-full border-b border-khmBorder/60 px-6 md:px-12 py-5 flex items-center justify-between z-20" data-purpose="site-header">
+<!-- Left Navigation: Index Menu Button -->
+<div class="flex items-center" data-purpose="nav-left">
+<button aria-label="Open index menu" class="flex items-center gap-2 text-sm tracking-wide hover:opacity-70 transition-opacity" type="button">
+<svg class="w-4 h-4 text-khmDark stroke-[1.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<line x1="3" x2="21" y1="7" y2="7"></line>
+<line x1="3" x2="21" y1="17" y2="17"></line>
+</svg>
+<span class="font-normal text-[15px]">Index</span>
+</button>
+</div>
+<!-- Center: Museum Logo -->
+<div class="text-center absolute left-1/2 -translate-x-1/2" data-purpose="museum-brand">
+<a class="museum-logo uppercase text-[11px] md:text-[12px] font-bold text-khmDark block tracking-wider leading-tight" href="#">
+<div>KUNST</div>
+<div>HISTORISCHES</div>
+<div>MUSEUM</div>
+<div>WIEN</div>
+</a>
+</div>
+<!-- Right: Language Selector, Audio Guide, and Closed Badge -->
+<div class="flex flex-col items-end relative" data-purpose="nav-right">
+<div class="flex items-center space-x-3 text-xs tracking-wider font-medium">
+<span class="text-khmDark font-semibold cursor-pointer">DE</span>
+<span class="text-khmGray">/</span>
+<span class="text-khmGray hover:text-khmDark cursor-pointer transition-colors">EN</span>
+<!-- Audio Icon & Label -->
+<button class="flex items-center space-x-1 pl-3 text-khmDark hover:opacity-70 transition-opacity" title="Audio Guide">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+<path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+<path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+</svg>
+<span class="text-[11px] uppercase tracking-wide">EIN</span>
+</button>
+</div>
+<!-- Closed Exhibition Note Ribbon -->
+<div class="mt-2" data-purpose="status-badge">
+<div class="closed-badge bg-[#f9f8f4] border border-khmBorder/80 px-2.5 py-0.5 text-[11px] text-khmDark/80 whitespace-nowrap">
+          Ausstellung bereits beendet
+        </div>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: MainContent -->
+<main class="flex-grow flex flex-col justify-between relative z-10 pt-8 md:pt-14 pb-0" data-purpose="exhibition-landing">
+<!-- Title & Metadata Grid -->
+<section class="max-w-[1400px] w-full mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 items-baseline gap-6" data-purpose="hero-typography">
+<!-- Artist Attribution (Left) -->
+<div class="md:col-span-3 text-left order-2 md:order-1 pt-2 md:pt-6">
+<h2 class="text-lg md:text-xl font-normal leading-tight tracking-normal text-khmDark">
+          Pieter<br/>Bruegel d. Ä.
+        </h2>
+</div>
+<!-- Central Main Exhibition Title -->
+<div class="md:col-span-6 text-center order-1 md:order-2">
+<h1 class="main-title font-serif text-khmDark">
+<span class="block">Once in a</span>
+<span class="block -mt-1 md:-mt-3">Lifetime</span>
+</h1>
+</div>
+<!-- Exhibition Dates (Right) -->
+<div class="md:col-span-3 text-left md:text-right order-3 pt-2 md:pt-6">
+<time class="text-lg md:text-xl font-normal leading-tight tracking-normal text-khmDark block">
+          2 Okt, 2018<br/>13 Jan, 2019
+        </time>
+</div>
+</section>
+<!-- Bottom Artwork Feature (Peasant Wedding Cutout) -->
+<section class="w-full relative mt-auto overflow-hidden flex justify-center items-end" data-purpose="hero-artwork">
+<div class="w-full relative max-h-[58vh] flex items-end justify-center">
+<!-- Exact painting cutout image aligned directly to bottom border -->
+<img alt="Pieter Bruegel d. Ä. - Bauernhochzeit (The Peasant Wedding)" class="w-full object-cover object-bottom max-w-none select-none pointer-events-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuVIbFJwKJ0S9AWF2hTxYgO7QfdfmVSf9co8LemXf8T_35oEQkR_R5HXxj7PKUn4tlCUJOn4VoP51ykGpDucldJLho0n3Mj3ZDP0YjbSu6kKTNnUuPNebWmIA_nx9qY_bqixLscmkpzCz5b9gqaS_CTaiz5MXUcEaDRAC2Gk1JYnbtjrRP-J3NWqBzMehOd79wov9ANM6HAmPU1EoOKJPTOij8nt2RLZV7MnE310qrFRrS-L4vIA9mjTep2nEXtUlgmQ" style="min-height: 280px; max-height: 58vh; object-position: center bottom;"/>
+</div>
+</section>
+</main>
+<!-- END: MainContent -->
+</body></html>

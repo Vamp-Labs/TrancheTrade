@@ -1,0 +1,28 @@
+{
+  "creditcoinCc3Testnet": {
+    "key": "creditcoin-cc3-testnet",
+    "chainId": 102031,
+    "name": "Creditcoin CC3 Testnet",
+    "shortName": "CC3",
+    "currencySymbol": "tCTC",
+    "currencyName": "Creditcoin Testnet CTC",
+    "currencyDecimals": 18,
+    "rpcUrl": "https://rpc.cc3-testnet.creditcoin.network",
+    "explorerName": "Blockscout",
+    "explorerBaseUrl": "https://creditcoin-testnet.blockscout.com",
+    "blockTimeSeconds": 15
+  },
+  "ethereumSepolia": {
+    "key": "ethereum-sepolia",
+    "chainId": 11155111,
+    "name": "Ethereum Sepolia",
+    "shortName": "SEPOLIA",
+    "currencySymbol": "SepoliaETH",
+    "currencyName": "Sepolia Ether",
+    "currencyDecimals": 18,
+    "rpcUrl": "https://ethereum-sepolia-rpc.publicnode.com",
+    "explorerName": "Etherscan",
+    "explorerBaseUrl": "https://sepolia.etherscan.io",
+    "blockTimeSeconds": 12
+  }
+}

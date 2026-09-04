@@ -1,0 +1,184 @@
+[
+  {
+    "id": "cycle-1",
+    "kind": "allocation",
+    "label": "Allocation 1 of 2 — senior only",
+    "occurredAt": "2026-09-04T14:25:48.969Z",
+    "invoiceId": "1",
+    "sourceTxHash": "0xb54cb83ecef6d7d3da44148e514337b9a9e387f49b666ab8d04282a2e3494f18",
+    "proofPath": "relayer/fixtures/proof-1.json",
+    "corruptionMode": null,
+    "destinationTxHash": "0xc2e4906846f82edbccc7724197d106da2ae4d420ff4bd8c30464b0b92544c342",
+    "snapshotBefore": {
+      "seniorOutstanding": "3180000000000000000000",
+      "seniorClaimed": null,
+      "juniorOutstanding": "1180000000000000000000",
+      "juniorClaimed": null,
+      "raw": {
+        "seniorOutstanding_": "3180000000000000000000",
+        "juniorOutstanding_": "1180000000000000000000",
+        "seniorPrincipal_": "3000000000000000000000",
+        "juniorPrincipal_": "1000000000000000000000",
+        "seniorAllocatedTotal_": "0",
+        "juniorAllocatedTotal_": "0",
+        "seniorCap_": "70000000000000000000000",
+        "juniorCap_": "30000000000000000000000"
+      }
+    },
+    "snapshotAfter": {
+      "seniorOutstanding": "1180000000000000000000",
+      "seniorClaimed": null,
+      "juniorOutstanding": "1180000000000000000000",
+      "juniorClaimed": null,
+      "raw": {
+        "seniorOutstanding_": "1180000000000000000000",
+        "juniorOutstanding_": "1180000000000000000000",
+        "seniorPrincipal_": "3000000000000000000000",
+        "juniorPrincipal_": "1000000000000000000000",
+        "seniorAllocatedTotal_": "2000000000000000000000",
+        "juniorAllocatedTotal_": "0",
+        "seniorCap_": "70000000000000000000000",
+        "juniorCap_": "30000000000000000000000"
+      }
+    }
+  },
+  {
+    "id": "cycle-2",
+    "kind": "allocation",
+    "label": "Allocation 2 of 2 — spills senior into junior",
+    "occurredAt": "2026-09-04T14:34:19.729Z",
+    "invoiceId": "1",
+    "sourceTxHash": "0x3ac3a2eb08bb64d4b7d27860769ac8558c16f5423ff623dd05b63ce30f2eefa9",
+    "proofPath": "relayer/fixtures/proof-2.json",
+    "corruptionMode": null,
+    "destinationTxHash": "0x93f2afba1b375d03f33a254ba24fadb0aa121cd824d4c69d491c777e12487632",
+    "snapshotBefore": {
+      "seniorOutstanding": "1180000000000000000000",
+      "seniorClaimed": null,
+      "juniorOutstanding": "1180000000000000000000",
+      "juniorClaimed": null,
+      "raw": {
+        "seniorOutstanding_": "1180000000000000000000",
+        "juniorOutstanding_": "1180000000000000000000",
+        "seniorPrincipal_": "3000000000000000000000",
+        "juniorPrincipal_": "1000000000000000000000",
+        "seniorAllocatedTotal_": "2000000000000000000000",
+        "juniorAllocatedTotal_": "0",
+        "seniorCap_": "70000000000000000000000",
+        "juniorCap_": "30000000000000000000000"
+      }
+    },
+    "snapshotAfter": {
+      "seniorOutstanding": "0",
+      "seniorClaimed": null,
+      "juniorOutstanding": "860000000000000000000",
+      "juniorClaimed": null,
+      "raw": {
+        "seniorOutstanding_": "0",
+        "juniorOutstanding_": "860000000000000000000",
+        "seniorPrincipal_": "3000000000000000000000",
+        "juniorPrincipal_": "1000000000000000000000",
+        "seniorAllocatedTotal_": "3180000000000000000000",
+        "juniorAllocatedTotal_": "320000000000000000000",
+        "seniorCap_": "70000000000000000000000",
+        "juniorCap_": "30000000000000000000000"
+      }
+    }
+  },
+  {
+    "id": "cycle-3",
+    "kind": "rejection",
+    "label": "Deliberate fail-closed demo — corrupted continuity proof",
+    "occurredAt": "2026-09-04T14:36:02.950Z",
+    "invoiceId": "1",
+    "sourceTxHash": "0x3ac3a2eb08bb64d4b7d27860769ac8558c16f5423ff623dd05b63ce30f2eefa9",
+    "proofPath": "relayer/fixtures/proof-2.json",
+    "corruptionMode": "continuity",
+    "destinationTxHash": "0x01d6930bca16481be5cada95f80b36b212e2cfb7881fbd3f45dc0c5526e327c4",
+    "snapshotBefore": {
+      "seniorOutstanding": "0",
+      "seniorClaimed": null,
+      "juniorOutstanding": "860000000000000000000",
+      "juniorClaimed": null,
+      "raw": {
+        "seniorOutstanding_": "0",
+        "juniorOutstanding_": "860000000000000000000",
+        "seniorPrincipal_": "3000000000000000000000",
+        "juniorPrincipal_": "1000000000000000000000",
+        "seniorAllocatedTotal_": "3180000000000000000000",
+        "juniorAllocatedTotal_": "320000000000000000000",
+        "seniorCap_": "70000000000000000000000",
+        "juniorCap_": "30000000000000000000000"
+      }
+    },
+    "snapshotAfter": {
+      "seniorOutstanding": "0",
+      "seniorClaimed": null,
+      "juniorOutstanding": "860000000000000000000",
+      "juniorClaimed": null,
+      "raw": {
+        "seniorOutstanding_": "0",
+        "juniorOutstanding_": "860000000000000000000",
+        "seniorPrincipal_": "3000000000000000000000",
+        "juniorPrincipal_": "1000000000000000000000",
+        "seniorAllocatedTotal_": "3180000000000000000000",
+        "juniorAllocatedTotal_": "320000000000000000000",
+        "seniorCap_": "70000000000000000000000",
+        "juniorCap_": "30000000000000000000000"
+      }
+    },
+    "rejection": {
+      "reason": "Error",
+      "errorSignature": "Error(string)",
+      "revertData": "0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000039436f6e74696e756974792070726f6f6620646f6573206e6f74206d61746368206174746573746174696f6e206f7220636865636b706f696e7400000000000000"
+    }
+  },
+  {
+    "id": "cycle-4",
+    "kind": "rejection",
+    "label": "Replay attempt — already-applied attestation, must be rejected",
+    "occurredAt": "2026-09-04T14:36:19.649Z",
+    "invoiceId": "1",
+    "sourceTxHash": "0xb54cb83ecef6d7d3da44148e514337b9a9e387f49b666ab8d04282a2e3494f18",
+    "proofPath": "relayer/fixtures/proof-1.json",
+    "corruptionMode": null,
+    "destinationTxHash": "0xb4f3872f9c6a0f5e7967f6b5d3e10e71042266459a34a8d1ea87c5aab797468b",
+    "snapshotBefore": {
+      "seniorOutstanding": "0",
+      "seniorClaimed": null,
+      "juniorOutstanding": "860000000000000000000",
+      "juniorClaimed": null,
+      "raw": {
+        "seniorOutstanding_": "0",
+        "juniorOutstanding_": "860000000000000000000",
+        "seniorPrincipal_": "3000000000000000000000",
+        "juniorPrincipal_": "1000000000000000000000",
+        "seniorAllocatedTotal_": "3180000000000000000000",
+        "juniorAllocatedTotal_": "320000000000000000000",
+        "seniorCap_": "70000000000000000000000",
+        "juniorCap_": "30000000000000000000000"
+      }
+    },
+    "snapshotAfter": {
+      "seniorOutstanding": "0",
+      "seniorClaimed": null,
+      "juniorOutstanding": "860000000000000000000",
+      "juniorClaimed": null,
+      "raw": {
+        "seniorOutstanding_": "0",
+        "juniorOutstanding_": "860000000000000000000",
+        "seniorPrincipal_": "3000000000000000000000",
+        "juniorPrincipal_": "1000000000000000000000",
+        "seniorAllocatedTotal_": "3180000000000000000000",
+        "juniorAllocatedTotal_": "320000000000000000000",
+        "seniorCap_": "70000000000000000000000",
+        "juniorCap_": "30000000000000000000000"
+      }
+    },
+    "rejection": {
+      "reason": "AlreadyApplied",
+      "errorSignature": "AttestationFailed(bytes32,uint8)",
+      "revertData": "0x29c374595450268582d542e8ace2f3243732feb8c580910f20920ac6743f6f4f62736db40000000000000000000000000000000000000000000000000000000000000003"
+    }
+  }
+]

@@ -1,0 +1,206 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-04T14:39:51.715Z",
+  "commit": null,
+  "contracts": {
+    "invoiceRegistry": {
+      "chainId": 11155111,
+      "address": "0x049a7c970Bd1e35ff13C15e73F59FbfA690D3ae5"
+    },
+    "trancheWaterfall": {
+      "chainId": 102031,
+      "address": "0x11ae52135180Cc0e76d28fbD6c9985393C291868"
+    },
+    "attestcoinVerifier": {
+      "chainId": 102031,
+      "address": "0x3b3dfc7609fA394EC268364Df0270444963428F1"
+    }
+  },
+  "cycles": [
+    {
+      "id": "cycle-1",
+      "kind": "allocation",
+      "label": "Allocation 1 of 2 — senior only",
+      "occurredAt": "2026-09-04T14:25:48.969Z",
+      "invoiceId": "1",
+      "source": {
+        "chain": "ethereum-sepolia",
+        "chainId": 11155111,
+        "event": "InvoiceRepaid",
+        "txHash": "0xb54cb83ecef6d7d3da44148e514337b9a9e387f49b666ab8d04282a2e3494f18",
+        "blockNumber": 11633974,
+        "logIndex": 78,
+        "amount": "2000000000000000000000",
+        "explorerUrl": "https://sepolia.etherscan.io/tx/0xb54cb83ecef6d7d3da44148e514337b9a9e387f49b666ab8d04282a2e3494f18"
+      },
+      "attestation": {
+        "chainKey": 1,
+        "attestedHeight": 11633974,
+        "attestationId": "0x5450268582d542e8ace2f3243732feb8c580910f20920ac6743f6f4f62736db4",
+        "proverUrl": "https://prover.cc3-testnet.creditcoin.network",
+        "fetchedAt": "2026-09-04T14:25:24.083Z",
+        "cached": true,
+        "continuityHashCount": 7,
+        "status": "attested"
+      },
+      "destination": {
+        "chain": "creditcoin-cc3-testnet",
+        "chainId": 102031,
+        "txHash": "0xc2e4906846f82edbccc7724197d106da2ae4d420ff4bd8c30464b0b92544c342",
+        "blockNumber": 5429481,
+        "status": "success",
+        "gasUsed": "179704",
+        "explorerUrl": "https://creditcoin-testnet.blockscout.com/tx/0xc2e4906846f82edbccc7724197d106da2ae4d420ff4bd8c30464b0b92544c342"
+      },
+      "allocation": {
+        "attestedAmount": "2000000000000000000000",
+        "seniorAllocation": "2000000000000000000000",
+        "juniorAllocation": "0",
+        "seniorOutstandingBefore": "3180000000000000000000",
+        "seniorOutstandingAfter": "1180000000000000000000",
+        "juniorOutstandingBefore": "1180000000000000000000",
+        "juniorOutstandingAfter": "1180000000000000000000"
+      },
+      "rejection": null
+    },
+    {
+      "id": "cycle-2",
+      "kind": "allocation",
+      "label": "Allocation 2 of 2 — spills senior into junior",
+      "occurredAt": "2026-09-04T14:34:19.729Z",
+      "invoiceId": "1",
+      "source": {
+        "chain": "ethereum-sepolia",
+        "chainId": 11155111,
+        "event": "InvoiceRepaid",
+        "txHash": "0x3ac3a2eb08bb64d4b7d27860769ac8558c16f5423ff623dd05b63ce30f2eefa9",
+        "blockNumber": 11634019,
+        "logIndex": 217,
+        "amount": "1500000000000000000000",
+        "explorerUrl": "https://sepolia.etherscan.io/tx/0x3ac3a2eb08bb64d4b7d27860769ac8558c16f5423ff623dd05b63ce30f2eefa9"
+      },
+      "attestation": {
+        "chainKey": 1,
+        "attestedHeight": 11634019,
+        "attestationId": "0x90a78c69fd78d05ea50f905fec1b0f5d4103d1fd9183c51ffba9717bd67519d8",
+        "proverUrl": "https://prover.cc3-testnet.creditcoin.network",
+        "fetchedAt": "2026-09-04T14:34:08.565Z",
+        "cached": true,
+        "continuityHashCount": 2,
+        "status": "attested"
+      },
+      "destination": {
+        "chain": "creditcoin-cc3-testnet",
+        "chainId": 102031,
+        "txHash": "0x93f2afba1b375d03f33a254ba24fadb0aa121cd824d4c69d491c777e12487632",
+        "blockNumber": 5429515,
+        "status": "success",
+        "gasUsed": "179984",
+        "explorerUrl": "https://creditcoin-testnet.blockscout.com/tx/0x93f2afba1b375d03f33a254ba24fadb0aa121cd824d4c69d491c777e12487632"
+      },
+      "allocation": {
+        "attestedAmount": "1500000000000000000000",
+        "seniorAllocation": "1180000000000000000000",
+        "juniorAllocation": "320000000000000000000",
+        "seniorOutstandingBefore": "1180000000000000000000",
+        "seniorOutstandingAfter": "0",
+        "juniorOutstandingBefore": "1180000000000000000000",
+        "juniorOutstandingAfter": "860000000000000000000"
+      },
+      "rejection": null
+    },
+    {
+      "id": "cycle-3",
+      "kind": "rejection",
+      "label": "Deliberate fail-closed demo — corrupted continuity proof",
+      "occurredAt": "2026-09-04T14:36:02.950Z",
+      "invoiceId": "1",
+      "source": {
+        "chain": "ethereum-sepolia",
+        "chainId": 11155111,
+        "event": "InvoiceRepaid",
+        "txHash": "0x3ac3a2eb08bb64d4b7d27860769ac8558c16f5423ff623dd05b63ce30f2eefa9",
+        "blockNumber": 11634019,
+        "logIndex": 217,
+        "amount": "1500000000000000000000",
+        "explorerUrl": "https://sepolia.etherscan.io/tx/0x3ac3a2eb08bb64d4b7d27860769ac8558c16f5423ff623dd05b63ce30f2eefa9"
+      },
+      "attestation": {
+        "chainKey": 1,
+        "attestedHeight": 11634019,
+        "attestationId": "0x90a78c69fd78d05ea50f905fec1b0f5d4103d1fd9183c51ffba9717bd67519d8",
+        "proverUrl": "https://prover.cc3-testnet.creditcoin.network",
+        "fetchedAt": "2026-09-04T14:34:08.565Z",
+        "cached": true,
+        "continuityHashCount": 2,
+        "status": "corrupted",
+        "corruptionMode": "continuity"
+      },
+      "destination": {
+        "chain": "creditcoin-cc3-testnet",
+        "chainId": 102031,
+        "txHash": "0x01d6930bca16481be5cada95f80b36b212e2cfb7881fbd3f45dc0c5526e327c4",
+        "blockNumber": 5429522,
+        "status": "reverted",
+        "gasUsed": "170562",
+        "explorerUrl": "https://creditcoin-testnet.blockscout.com/tx/0x01d6930bca16481be5cada95f80b36b212e2cfb7881fbd3f45dc0c5526e327c4"
+      },
+      "allocation": null,
+      "rejection": {
+        "reason": "VerifierReverted",
+        "errorSignature": "Error(string)",
+        "revertData": "0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000039436f6e74696e756974792070726f6f6620646f6573206e6f74206d61746368206174746573746174696f6e206f7220636865636b706f696e7400000000000000",
+        "seniorOutstandingBefore": "0",
+        "seniorOutstandingAfter": "0",
+        "juniorOutstandingBefore": "860000000000000000000",
+        "juniorOutstandingAfter": "860000000000000000000"
+      }
+    },
+    {
+      "id": "cycle-4",
+      "kind": "rejection",
+      "label": "Replay attempt — already-applied attestation, must be rejected",
+      "occurredAt": "2026-09-04T14:36:19.649Z",
+      "invoiceId": "1",
+      "source": {
+        "chain": "ethereum-sepolia",
+        "chainId": 11155111,
+        "event": "InvoiceRepaid",
+        "txHash": "0xb54cb83ecef6d7d3da44148e514337b9a9e387f49b666ab8d04282a2e3494f18",
+        "blockNumber": 11633974,
+        "logIndex": 78,
+        "amount": "2000000000000000000000",
+        "explorerUrl": "https://sepolia.etherscan.io/tx/0xb54cb83ecef6d7d3da44148e514337b9a9e387f49b666ab8d04282a2e3494f18"
+      },
+      "attestation": {
+        "chainKey": 1,
+        "attestedHeight": 11633974,
+        "attestationId": "0x5450268582d542e8ace2f3243732feb8c580910f20920ac6743f6f4f62736db4",
+        "proverUrl": "https://prover.cc3-testnet.creditcoin.network",
+        "fetchedAt": "2026-09-04T14:25:24.083Z",
+        "cached": true,
+        "continuityHashCount": 7,
+        "status": "attested"
+      },
+      "destination": {
+        "chain": "creditcoin-cc3-testnet",
+        "chainId": 102031,
+        "txHash": "0xb4f3872f9c6a0f5e7967f6b5d3e10e71042266459a34a8d1ea87c5aab797468b",
+        "blockNumber": 5429523,
+        "status": "reverted",
+        "gasUsed": "174832",
+        "explorerUrl": "https://creditcoin-testnet.blockscout.com/tx/0xb4f3872f9c6a0f5e7967f6b5d3e10e71042266459a34a8d1ea87c5aab797468b"
+      },
+      "allocation": null,
+      "rejection": {
+        "reason": "AlreadyApplied",
+        "errorSignature": "AttestationFailed(bytes32,uint8)",
+        "revertData": "0x29c374595450268582d542e8ace2f3243732feb8c580910f20920ac6743f6f4f62736db40000000000000000000000000000000000000000000000000000000000000003",
+        "seniorOutstandingBefore": "0",
+        "seniorOutstandingAfter": "0",
+        "juniorOutstandingBefore": "860000000000000000000",
+        "juniorOutstandingAfter": "860000000000000000000"
+      }
+    }
+  ]
+}

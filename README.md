@@ -29,12 +29,8 @@ asset class — not a UX inconvenience.
 
 ## The mechanism
 
-```
-Ethereum Sepolia              Attestcoin                    Creditcoin CC3 testnet
-InvoiceRegistry     ──────▶   attests the           ──────▶ TrancheWaterfall
-InvoiceRepaid event           InvoiceRepaid log              allocates senior-first,
-(real transaction)            (real attestation)             junior-second (real tx)
-```
+<img width="2092" height="752" alt="image" src="https://github.com/user-attachments/assets/ead662bc-9499-49ee-bc46-464b6d29a2a8" />
+
 
 1. An invoice repayment lands as a real `InvoiceRepaid` event on Ethereum Sepolia.
 2. Attestcoin attests that event and returns a proof carrying the exact amount and a unique

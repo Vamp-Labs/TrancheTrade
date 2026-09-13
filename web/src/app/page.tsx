@@ -38,7 +38,7 @@ export default async function PoolPage() {
 
         <h1 className="md:col-span-6">
           <span className="main-title block font-serif text-khmDark">Senior first,</span>
-          <span className="main-title -mt-1 block font-serif text-khmDark md:-mt-3">
+          <span className="main-title -mt-1 block font-serif text-khmDark">
             then junior.
           </span>
         </h1>
